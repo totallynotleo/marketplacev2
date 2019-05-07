@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  listing: one
+  duration: 1
+  order: one
+
+two:
+  listing: two
+  duration: 1
+  order: two

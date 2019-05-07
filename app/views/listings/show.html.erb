@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @listing.title %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @listing.user.username %>
+</p>
+
+<p>
+  <strong>Cost:</strong>
+  <%= @listing.cost %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @listing.description %>
+</p>
+
+<%= link_to 'Add to Order', order_add_listing_path(@listing), method: 'post' %>
+<br>
+<br>
+<%= link_to 'Edit', edit_listing_path(@listing) %> |
+<%= link_to 'Back', listings_path %>
