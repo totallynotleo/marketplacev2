@@ -19,9 +19,11 @@
   <strong>Description:</strong>
   <%= @listing.description %>
 </p>
+    <% if @listing.user != current_user %>
+<%= link_to 'Add to Order', order_add_listing_path(@listing), method: 'post' %> |
+  <% end %>
+  <% if @listing.user == current_user %>
+    <%= link_to 'Edit', edit_listing_path(@listing) %> |
+  <% end %>
 
-<%= link_to 'Add to Order', order_add_listing_path(@listing), method: 'post' %>
-<br>
-<br>
-<%= link_to 'Edit', edit_listing_path(@listing) %> |
 <%= link_to 'Back', listings_path %>

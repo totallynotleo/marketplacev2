@@ -25,7 +25,13 @@ class OrdersController < ApplicationController
   end
 
   def add_listing
-    render plain: params.inspect
+    # render plain: params.inspect
+    @last_order = current_user.order.last
+    if @order == nil
+      @order = Order.new(order_params)
+    end
+    @listing_object = params[:listing_id]
+    @order.listing << @listing_object
     # 1. Get the last order for the current user
     # 1.1 If no order exists, create a new one for this user
     # 2. Get the listing object with params[:listing_id]
