@@ -26,8 +26,9 @@ class OrdersController < ApplicationController
 
   def add_listing
     @order = current_user.order
+    raise @order.inspect
     if @order == nil
-      new_params = {user_id: current_user, shipping_address: "", listing_id: [#ADD THE REFRENCE ID HERE]}
+      new_params = {user_id: current_user, shipping_address: "", listing_id: []}
       @order = Order.new(new_params)
     end
 
