@@ -25,14 +25,12 @@ class OrdersController < ApplicationController
   end
 
   def add_listing
-    # render plain: params.inspect
     @order = current_user.order
-    render @order
     if @order == nil
-      @order = Order.new(order_params)
+      new_params = {user_id: current_user, shipping_address: "", listing_id: [#ADD THE REFRENCE ID HERE]}
+      @order = Order.new(new_params)
     end
-    @listing_object = params[:listing_id]
-    @order.listing << @listing_object
+    
     # 1. Get the last order for the current user
     # 1.1 If no order exists, create a new one for this user
     # 2. Get the listing object with params[:listing_id]
@@ -42,7 +40,7 @@ class OrdersController < ApplicationController
   # POST /orders
   # POST /orders.json
   def create
-
+    
     @order = Order.new(order_params)
 
     respond_to do |format|
