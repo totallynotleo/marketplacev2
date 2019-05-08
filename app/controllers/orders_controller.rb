@@ -30,7 +30,7 @@ class OrdersController < ApplicationController
       new_params = {user_id: current_user, shipping_address: "", listing_id: [#ADD THE REFRENCE ID HERE]}
       @order = Order.new(new_params)
     end
-    
+
     # 1. Get the last order for the current user
     # 1.1 If no order exists, create a new one for this user
     # 2. Get the listing object with params[:listing_id]
