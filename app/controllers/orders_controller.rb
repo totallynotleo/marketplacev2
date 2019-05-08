@@ -26,7 +26,8 @@ class OrdersController < ApplicationController
 
   def add_listing
     # render plain: params.inspect
-    @last_order = current_user.order.last
+    @order = current_user.order
+    render @order
     if @order == nil
       @order = Order.new(order_params)
     end
@@ -87,6 +88,6 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:user_id, :shipping_address)
+      params.require(:order).permit(:user_id, :shipping_address, listing_ids: [])
     end
 end

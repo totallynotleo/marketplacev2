@@ -80,7 +80,7 @@ class ListingsController < ApplicationController
 
     def check_owner 
       if current_user != @listing.user
-        flash[:alert] = "You ain't my real dad!"
+        flash[:alert] = "You don't have permission for this file."
         redirect_to(request.referrer)
       end
     end 
