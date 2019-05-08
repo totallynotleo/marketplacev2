@@ -13,3 +13,6 @@
  *= require_tree .
  *= require_self
  */
+.field {
+background-color: rgb(241, 241, 241)
+}
