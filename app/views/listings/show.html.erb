@@ -4,6 +4,11 @@
   <strong>Title:</strong>
   <%= @listing.title %>
 </p>
+<p>
+  <% if @listing.image.attached? == true %>
+    <%= image_tag @listing.image %>
+  <% end %>
+</p>
 
 <p>
   <strong>User:</strong>

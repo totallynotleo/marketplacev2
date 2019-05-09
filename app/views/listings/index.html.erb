@@ -16,6 +16,9 @@
   <tbody>
     <% @listings.each do |listing| %>
       <tr>
+      <% if listing.image.attached? == true %>
+        <td><%= image_tag listing.image.variant(resize: "200x200") %> </td>
+      <% end %>
         <td><%= listing.title %></td>
         <td><%= listing.user.username %></td>
         <td><%= listing.cost %></td>

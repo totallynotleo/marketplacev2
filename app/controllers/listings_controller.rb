@@ -34,7 +34,7 @@ class ListingsController < ApplicationController
     @listing = Listing.new(listing_params)
     # @listing.user = User.find_by(username: params[:listing][:username])
     @listing.user = current_user
-
+    @listing.image.attach(listing_params[:image])
     respond_to do |format|
       if @listing.save
         format.html { redirect_to @listing, notice: 'Listing was successfully created.' }
@@ -50,7 +50,7 @@ class ListingsController < ApplicationController
   # PATCH/PUT /listings/1.json
   def update
     @data = listing_params
-    @listing.user = User.find_by(username: params[:listing][:username])
+    @listing.user = current_user
     respond_to do |format|
       if @listing.update(listing_params)
         format.html { redirect_to @listing, notice: 'Listing was successfully updated.' }
@@ -87,6 +87,6 @@ class ListingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def listing_params
-      params.require(:listing).permit(:title, :user_id, :username, :cost, :description)
+      params.require(:listing).permit(:title, :user_id, :username, :cost, :description, :image)
     end
 end
