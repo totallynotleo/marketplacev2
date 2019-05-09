@@ -25,11 +25,15 @@ class OrdersController < ApplicationController
   end
 
   def add_listing
-    @order = current_user.order
-    if @order == nil
-      new_params = {user_id: current_user, shipping_address: "", listing_id: [#ADD THE REFRENCE ID HERE]}
-      @order = Order.new(new_params)
+    @orders = current_user.orders
+    # raise @order.inspect
+    if @orders == nil
+      @order = Order.create!
+    else 
+      @order = @orders.last
+      # new_params = {user_id: current_user, shipping_address: "", listing_id: []}
     end
+    raise @order.inspect
 
     # 1. Get the last order for the current user
     # 1.1 If no order exists, create a new one for this user
@@ -37,12 +41,16 @@ class OrdersController < ApplicationController
     # 3. Add the listing object to the order
   end
 
+def ask_duration
+  
+end
+
   # POST /orders
   # POST /orders.json
   def create
     
     @order = Order.new(order_params)
-
+    @order.user = current_user
     respond_to do |format|
       if @order.save
         format.html { redirect_to @order, notice: 'Order was successfully created.' }
