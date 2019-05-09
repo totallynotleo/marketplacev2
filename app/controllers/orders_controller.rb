@@ -25,7 +25,7 @@ class OrdersController < ApplicationController
   end
 
   def add_listing
-    @order = current_user.order
+    @orders = current_user.orders
     raise @order.inspect
     if @order == nil
       new_params = {user_id: current_user, shipping_address: "", listing_id: []}
@@ -43,7 +43,7 @@ class OrdersController < ApplicationController
   def create
     
     @order = Order.new(order_params)
-
+    @order.user = current_user
     respond_to do |format|
       if @order.save
         format.html { redirect_to @order, notice: 'Order was successfully created.' }
