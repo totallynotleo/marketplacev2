@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th></th>
       <th>Title</th>
       <th>User</th>
       <th>Cost</th>
@@ -17,7 +18,9 @@
     <% @listings.each do |listing| %>
       <tr>
       <% if listing.image.attached? == true %>
-        <td><%= image_tag listing.image.variant(resize: "200x200") %> </td>
+        <td><%= image_tag listing.image, :size => "100x100"  %> </td>
+        <% else %>
+        <td></td>
       <% end %>
         <td><%= listing.title %></td>
         <td><%= listing.user.username %></td>
