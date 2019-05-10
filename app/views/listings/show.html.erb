@@ -25,7 +25,7 @@
   <%= @listing.description %>
 </p>
     <% if @listing.user != current_user %>
-<%= link_to 'Add to Order', order_add_listing_path(@listing), method: 'post' %> |
+<%= button_to 'Add to Cart', line_item_path(instrument_id: @listing), class: "button is-warning add-to-cart" %> |
   <% end %>
   <% if @listing.user == current_user %>
     <%= link_to 'Edit', edit_listing_path(@listing) %> |

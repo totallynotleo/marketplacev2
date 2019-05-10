@@ -2,10 +2,8 @@
 
 one:
   listing: one
-  duration: 1
-  order: one
+  cart: one
 
 two:
   listing: two
-  duration: 1
-  order: two
+  cart: two

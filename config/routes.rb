@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
+  resources :line_items
+  resources :carts
   devise_for :users
-  resources :orders
   resources :listings
   resources :users
   post "/orders/add_listing/:listing_id", to: 'orders#add_listing', as: 'order_add_listing'
