@@ -3,6 +3,16 @@ class ListingsController < ApplicationController
   before_action :set_listing, only: [:show, :edit, :update, :destroy]
   before_action :check_owner, only: [:edit, :destroy, :update]
 
+  # search feature:
+  def search  
+    if params[:search].blank?  
+      redirect_to(root_path, alert: "Empty field!") and return  
+    else  
+      @parameter = params[:search].downcase  
+      @results = Listing.all.where("lower(title) LIKE :search", search: "%"+ @parameter + "%")  
+    end  
+  end
+
   # GET /listings
   # GET /listings.json
   def index
