@@ -3,9 +3,16 @@
 </div>
 <hr />
 <section class="section">
-  <%= @cart.line_items %>
+  <% @cart.line_items.each do |cart_item| %>
+    <p>
+      <span>title: <%= cart_item.listing.title %></span>
+      <span>quantity: <%= cart_item.quantity %></span>
+      <span>cost: <%= cart_item.listing.cost %></span>
+    </p>
+  <% end %>
 
-  
+  <p>Total: <%= @amount %></p>
+  <p>User.id: <%= current_user.id %></p>
 </section>
 
 <p>
@@ -13,14 +20,14 @@
 </p>
 
 
-<script src="https://js.stripe.com/v3/"></script>
 
+<script src="https://js.stripe.com/v3/"></script>
 <script>
     var stripe = Stripe('pk_test_Ilh9uzxnptCE3QRvTMqeF6zM00Rp98Il5Q');
 
     function goToCheckout () {
       stripe.redirectToCheckout({
-        sessionId: '<% @stripe_checkout_session %>',
+        sessionId: '<%= @stripe_checkout_session.id %>',
       }).then(function (result) {
         // If `redirectToCheckout` fails due to a browser or network
         // error, display the localized error message to your customer
@@ -28,7 +35,7 @@
       });  
     }
   var button = document.querySelector('button');
-  button.addEventListener('click', goToCheckout)  
+  button.addEventListener('click', goToCheckout)
 </script>
 
   <%= button_to 'Empty Cart', @cart, method: :delete, data: { confirm: "Are you sure? " }, class: "button is-danger" %>

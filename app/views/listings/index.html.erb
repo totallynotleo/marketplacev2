@@ -31,16 +31,15 @@
       <% end %>
         <td><%= listing.title %></td>
         <td><%= listing.user.username %></td>
-        <td><%= listing.cost %></td>
+        <td>$<%= listing.cost %></td>
         <td><%= link_to 'View', listing %></td>
-          <% if listing.user == current_user %>
+      <% if listing.user == current_user %>
           <td><%= link_to 'Edit', edit_listing_path(listing) %></td>
           <td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          <% end %>
+      <% end %>
     <% end %>
   </tbody>
 </table>
-
 <br>
 
 <%= link_to 'New Listing', new_listing_path %>

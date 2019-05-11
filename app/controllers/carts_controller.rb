@@ -2,6 +2,8 @@ class CartsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart
   before_action :set_cart, only: [:show, :edit, :update, :destroy]
 
+  Stripe.api_key = 'sk_test_9tcFefHrg8RWT5i2rVjyoCfA00pjqGox8B'
+
   # GET /carts
   # GET /carts.json
   def index
@@ -11,7 +13,25 @@ class CartsController < ApplicationController
   # GET /carts/1
   # GET /carts/1.json
   def show
-    render plain: LineItem.all.inspect
+    # Compute cart amount for this screen
+    line_items = LineItem.where(cart_id: session[:cart_id])
+    @amount = line_items.map(&:listing).sum(&:cost)
+
+    # compute stripe session with above amount
+    @stripe_checkout_session = Stripe::Checkout::Session.create(
+      payment_method_types: ['card'],
+      line_items: [{
+        name: 'Cart',
+        description: "TO DO ",
+        amount: @amount * 100,
+        currency: 'aud',
+        quantity: 1,
+      }],
+      success_url: 'https://localhost:3000/success',
+      cancel_url: 'https://localhost:3000/cancel',
+    )
+
+    # render plain: LineItem.all.inspect
   end
 
   # GET /carts/new
@@ -74,8 +94,6 @@ class CartsController < ApplicationController
     end
   end
 
-
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_cart
@@ -91,19 +109,4 @@ class CartsController < ApplicationController
       logger.error "Attempt to access invalid cart #{params[:id]}"
       redirect_to root_path, notice: "That cart doesn't exist"
     end
-
-Stripe.api_key =   <%= ENV['STRIPE_API_SECRET'] %>
-
-@stripe_checkout_session = Stripe::Checkout::Session.create(
-  payment_method_types: ['card'],
-  line_items: [{
-    name: 'test',
-    description: "test",
-    amount: 400,
-    currency: 'aud',
-    quantity: 1,
-  }],
-  success_url: 'https://localhost:3000/success',
-  cancel_url: 'https://localhost:3000/cancel',
-)
 end
