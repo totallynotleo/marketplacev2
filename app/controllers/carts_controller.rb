@@ -34,7 +34,7 @@ class CartsController < ApplicationController
         currency: 'aud',
         quantity: 1,
       }],
-      success_url: Rails.env.production? ? "https://#{productionapp}/cancel" : 'http://localhost:3000/success',
+      success_url: Rails.env.production? ? "https://#{productionapp}/success" : 'http://localhost:3000/success',
       cancel_url: Rails.env.production? ? "https://#{productionapp}/cancel" : 'http://localhost:3000/cancel',
     )
 
