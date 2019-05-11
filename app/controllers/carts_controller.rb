@@ -26,18 +26,21 @@ class CartsController < ApplicationController
   # POST /carts
   # POST /carts.json
   def create
-    @cart = Cart.new(cart_params)
-
-    respond_to do |format|
-      if @cart.save
-        format.html { redirect_to @cart, notice: 'Cart was successfully created.' }
-        format.json { render :show, status: :created, location: @cart }
-      else
-        format.html { render :new }
-        format.json { render json: @cart.errors, status: :unprocessable_entity }
-      end
-    end
+   
   end
+  #  OLD CREATE METHOD MIGHT BE NEEDED
+    # @cart = Cart.new(cart_params)
+
+    # respond_to do |format|
+    #   if @cart.save
+    #     format.html { redirect_to @cart, notice: 'Cart was successfully created.' }
+    #     format.json { render :show, status: :created, location: @cart }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @cart.errors, status: :unprocessable_entity }
+    #   end
+    # end
+  # end
 
   def add_item
     @cart = Cart.last
@@ -71,6 +74,8 @@ class CartsController < ApplicationController
     end
   end
 
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_cart
@@ -86,4 +91,19 @@ class CartsController < ApplicationController
       logger.error "Attempt to access invalid cart #{params[:id]}"
       redirect_to root_path, notice: "That cart doesn't exist"
     end
+
+Stripe.api_key = 'sk_test_9tcFefHrg8RWT5i2rVjyoCfA00pjqGox8B'
+
+@stripe_checkout_session = Stripe::Checkout::Session.create(
+  payment_method_types: ['card'],
+  line_items: [{
+    name: 'test',
+    description: "test",
+    amount: 400,
+    currency: 'aud',
+    quantity: 1,
+  }],
+  success_url: 'https://localhost:3000/success',
+  cancel_url: 'https://localhost:3000/cancel',
+)
 end

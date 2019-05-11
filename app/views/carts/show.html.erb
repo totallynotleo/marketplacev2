@@ -5,14 +5,32 @@
 <section class="section">
   <%= @cart.line_items %>
 
-  <div class="columns">
-    <div class="column">
-      <%= button_to 'Empty Cart', @cart, method: :delete, data: { confirm: "Are you sure? " }, class: "button is-danger" %>
-    </div>
-    <div class="column total has-text-right">
-      <h4 class="title is-4">
-        <%# <span class="f5 has-text-grey">Total:</span> <%= number_to_currency(@cart.total_price) %> 
-      </h4>
-    </div>
-  </div>
+  
 </section>
+
+<p>
+<button> Pay Now </button>
+</p>
+
+
+<script src="https://js.stripe.com/v3/"></script>
+
+<script>
+    var stripe = Stripe('pk_test_Ilh9uzxnptCE3QRvTMqeF6zM00Rp98Il5Q');
+
+    function goToCheckout () {
+      stripe.redirectToCheckout({
+        sessionId: '<% @stripe_checkout_session %>',
+      }).then(function (result) {
+        // If `redirectToCheckout` fails due to a browser or network
+        // error, display the localized error message to your customer
+        // using `result.error.message`.
+      });  
+    }
+  var button = document.querySelector('button');
+  button.addEventListener('click', goToCheckout)  
+</script>
+
+  <%= button_to 'Empty Cart', @cart, method: :delete, data: { confirm: "Are you sure? " }, class: "button is-danger" %>
+  <h4><%# <span class="f5 has-text-grey">Total:</span> <%= number_to_currency(@cart.total_price) %> </h4>
+  
