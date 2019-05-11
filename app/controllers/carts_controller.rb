@@ -2,7 +2,7 @@ class CartsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart
   before_action :set_cart, only: [:show, :edit, :update, :destroy]
 
-  Stripe.api_key = 'sk_test_9tcFefHrg8RWT5i2rVjyoCfA00pjqGox8B'
+  Stripe.api_key = ENV['STRIPE_API_SECRET']
 
   # GET /carts
   # GET /carts.json
@@ -27,8 +27,8 @@ class CartsController < ApplicationController
         currency: 'aud',
         quantity: 1,
       }],
-      success_url: 'https://localhost:3000/success',
-      cancel_url: 'https://localhost:3000/cancel',
+      success_url: 'http://localhost:3000/success',
+      cancel_url: 'http://localhost:3000/cancel',
     )
 
     # render plain: LineItem.all.inspect
