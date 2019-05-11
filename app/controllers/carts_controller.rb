@@ -92,7 +92,7 @@ class CartsController < ApplicationController
       redirect_to root_path, notice: "That cart doesn't exist"
     end
 
-Stripe.api_key = 'sk_test_9tcFefHrg8RWT5i2rVjyoCfA00pjqGox8B'
+Stripe.api_key =   <%= ENV['STRIPE_API_SECRET'] %>
 
 @stripe_checkout_session = Stripe::Checkout::Session.create(
   payment_method_types: ['card'],
