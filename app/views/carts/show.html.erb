@@ -15,9 +15,11 @@
   <p>User.id: <%= current_user.id %></p>
 </section>
 
+<% if @amount > 0 %>
 <p>
 <button> Pay Now </button>
 </p>
+<% end %>
 
 
 
@@ -27,7 +29,7 @@
 
     function goToCheckout () {
       stripe.redirectToCheckout({
-        sessionId: '<%= @stripe_checkout_session.id %>',
+        sessionId: '<%= @stripe_checkout_session.id if @amount > 0 %>',
       }).then(function (result) {
         // If `redirectToCheckout` fails due to a browser or network
         // error, display the localized error message to your customer

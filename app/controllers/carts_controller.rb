@@ -17,6 +17,10 @@ class CartsController < ApplicationController
     line_items = LineItem.where(cart_id: session[:cart_id])
     @amount = line_items.map(&:listing).sum(&:cost)
 
+    if @amount <= 0
+      return
+    end
+
     # compute stripe session with above amount
     @stripe_checkout_session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
