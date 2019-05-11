@@ -11,7 +11,7 @@ class CartsController < ApplicationController
   # GET /carts/1
   # GET /carts/1.json
   def show
-    # render plain: LineItem.all.inspect
+    render plain: LineItem.all.inspect
   end
 
   # GET /carts/new

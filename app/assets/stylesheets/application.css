@@ -13,9 +13,80 @@
  *= require_tree .
  *= require_self
  */
-a {
+* {
+    font-size: 17
+}
+td {
+    font-size: 17
+}
+html {
+    padding: 0;
+    display: inline;
+    background-color: #8FD0CA;
+    width: 100%;
+}
+body {
+    margin: 0;
+    background-color: peachpuff;
+}
+header {
+    background-color: #8FD0CA;
+    color: lightcoral;
+    width: 100%;
+    height: 6vw;
+    text-align: left;
+    padding: 0px;
+    margin: 0;
+    line-height: 50px;
+}
+
+.page-header {
+    height: 20px;
+    line-height: 0px;
+}
+
+.page-header a {
+    color: lightcoral;
+    font-size: 3vw;
+    background-color: #8FD0CA;
     text-decoration: none;
 }
- header {
+.navbar a{
+    vertical-align: middle;
+    text-decoration: none;
+    font-size: 2vw;
+    text-align: center;
+    padding-right: 20px;
+}
+a {
+    font-size: 17px;
+}
 
+p {
+    font-size: 17px;
+}
+
+a:hover {
+    text-decoration: none;
+    background-color: transparent;
+    
+}
+
+.devise-stuff {
+    margin: auto;
+    width: 50%;
+    padding: 0px;
+}
+.main-program {
+    margin: auto;
+    width: 50%;
+    padding: 0px;
  }
+
+footer {
+    
+    margin: auto;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+}
