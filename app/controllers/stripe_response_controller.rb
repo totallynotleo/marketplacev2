@@ -4,8 +4,4 @@ class StripeResponseController < ApplicationController
         session[:cart_id] = @cart.id
         redirect_to '/listings'
     end 
-
-    def cancel
-
-    end 
 end

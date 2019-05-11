@@ -14,6 +14,11 @@
     <% @results.each do |listing| %>
 
  <tr>
+      <% if listing.image.attached? == true %>
+        <td><%= image_tag listing.image, :size => "100x100"  %> </td>
+      <% else %>
+        <td></td>
+      <% end %>
         <td><%= listing.title %></td>
         <td><%= listing.user.username %></td>
         <td><%= listing.cost %></td>

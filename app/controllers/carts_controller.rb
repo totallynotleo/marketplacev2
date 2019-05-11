@@ -21,6 +21,9 @@ class CartsController < ApplicationController
       return
     end
 
+    productionapp = "limitless-bastion-71589.herokuapp.com"
+
+
     # compute stripe session with above amount
     @stripe_checkout_session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
@@ -31,8 +34,8 @@ class CartsController < ApplicationController
         currency: 'aud',
         quantity: 1,
       }],
-      success_url: 'http://localhost:3000/success',
-      cancel_url: 'http://localhost:3000/cancel',
+      success_url: Rails.env.production? ? "https://#{productionapp}/cancel" : 'http://localhost:3000/success',
+      cancel_url: Rails.env.production? ? "https://#{productionapp}/cancel" : 'http://localhost:3000/cancel',
     )
 
     # render plain: LineItem.all.inspect

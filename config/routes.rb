@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :listings
   resources :users
+  get 'cancel', to: "carts#show"
   get 'success', to: "stripe_response#success"
   post 'add_item/:listing_id', to: 'carts#add_item', as: 'add_item'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
