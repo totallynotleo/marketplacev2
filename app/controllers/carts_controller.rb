@@ -11,6 +11,7 @@ class CartsController < ApplicationController
   # GET /carts/1
   # GET /carts/1.json
   def show
+    # render plain: LineItem.all.inspect
   end
 
   # GET /carts/new
@@ -38,6 +39,13 @@ class CartsController < ApplicationController
     end
   end
 
+  def add_item
+    @cart = Cart.last
+    @listing = Listing.find(params[:listing_id])
+    LineItem.create(cart: @cart, listing: @listing)
+    redirect_to @cart
+  end
+
   # PATCH/PUT /carts/1
   # PATCH/PUT /carts/1.json
   def update
@@ -55,12 +63,10 @@ class CartsController < ApplicationController
   # DELETE /carts/1
   # DELETE /carts/1.json
   def destroy
-    if @cart.id == session[:cart_id] 
-      @cart.destroy 
-    end
-    session{:cart_id} = nil
+    @cart.destroy if @cart.id == session[:cart_id]
+    session[:cart_id] = nil
     respond_to do |format|
-      format.html { redirect_to carts_url, notice: 'Cart was successfully destroyed.' }
+      format.html { redirect_to root_path, notice: 'Cart was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -77,7 +83,7 @@ class CartsController < ApplicationController
     end
 
     def invalid_cart
-      logger.error "Attempt to access invalid cart #{params[id]}"
+      logger.error "Attempt to access invalid cart #{params[:id]}"
       redirect_to root_path, notice: "That cart doesn't exist"
     end
 end

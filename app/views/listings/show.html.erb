@@ -26,7 +26,7 @@
 </p>
 <p>
     <% if @listing.user != current_user %>
-      <%= link_to 'Add to Cart', line_item_path(listing_id: @listing), class: "button is-warning add-to-cart" %> |
+      <%= link_to 'Add to Cart', add_item_path(@listing), method: 'post', class: "button is-warning add-to-cart" %> |
   <% end %>
   <% if @listing.user == current_user %>
     <%= link_to 'Edit', edit_listing_path(@listing) %> |

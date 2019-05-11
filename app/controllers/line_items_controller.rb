@@ -1,6 +1,6 @@
 class LineItemsController < ApplicationController
   include CurrentCart
-  before_action :set_line_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_line_item, only: [:edit, :update, :destroy]
   before_action :set_cart, only: [:create]
 
   # GET /line_items
@@ -12,6 +12,7 @@ class LineItemsController < ApplicationController
   # GET /line_items/1
   # GET /line_items/1.json
   def show
+
   end
 
   # GET /line_items/new
@@ -31,7 +32,7 @@ class LineItemsController < ApplicationController
 
     respond_to do |format|
       if @line_item.save
-        format.html { redirect_to @line_item.cart, notice: 'Item added to cart' }
+        format.html { redirect_to @line_item.cart, notice: 'Item added to cart.' }
         format.json { render :show, status: :created, location: @line_item }
       else
         format.html { render :new }
@@ -60,7 +61,7 @@ class LineItemsController < ApplicationController
     @cart = Cart.find(session[:cart_id])
     @line_item.destroy
     respond_to do |format|
-      format.html { redirect_to cart_path(@cart), notice: 'Line item was successfully destroyed.' }
+      format.html { redirect_to cart_path(@cart), notice: 'Item successfully removed.' }
       format.json { head :no_content }
     end
   end
@@ -73,6 +74,6 @@ class LineItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def line_item_params
-      params.require(:line_item).permit(:listing_id)
+      params.require(:line_item).permit(:listin_id)
     end
 end

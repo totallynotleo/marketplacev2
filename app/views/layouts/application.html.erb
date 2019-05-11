@@ -17,7 +17,16 @@
     <a href="/users"> Users </a>  
   <% end %>
   <a href="/listings"> Listings </a>
-  </header>
+
+        <%= link_to cart_path(@cart), class:"navbar-item button is-warning" do %>
+          <span class="icon is-small">
+          <i class="fa fa-shopping-cart"></i>
+          </span>
+          <span>Cart
+          </span>
+      <% end %>
+
+  </header>  
   <p class="navbar-text pull-right">
 <% if user_signed_in? %>
   Logged in as <strong><%= current_user.email %></strong>.
