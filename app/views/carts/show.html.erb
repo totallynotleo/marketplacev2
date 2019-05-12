@@ -1,4 +1,3 @@
-<%%>
 <table>
   <thead>
     <tr>
@@ -20,13 +19,14 @@
       <td> <%= cart_item.listing.title %> </td>
       <td> <%= cart_item.listing.user.username %> </td>
       <td> $<%= cart_item.listing.cost %></td>
-      <td> <%= button_to "Remove from Cart", cart_item, :method => :delete %></td>
+      <td> <%= button_to "Remove from Cart", cart_item, :method => :delete, class: 'buttonto' %></td>
   <% end %>
   </tbody>
 </table>
 <div>
-  Total: $<%= @amount %> |
-  <%= link_to 'Keep Shopping', listings_path, class: 'button is-warning' %>
+  Total: $<%= @amount %>
+  <hr>
+  <%= link_to 'Keep Shopping', listings_path, class: 'button is-warning' %>|
   <%= link_to 'Empty Cart', @cart, method: :delete, data: { confirm: "Are you sure? " }, class: "button is-danger" %>
 </div>
 

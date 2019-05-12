@@ -20,7 +20,15 @@
 button {
     background-color: lightcoral;
     border: none;
-    
+    font-size: 17px;
+    border-radius: 5px;
+}
+
+.buttonto {
+    background-color: lightcoral;
+    border: none;
+    font-size: 17px;
+    border-radius: 5px;
 }
 
 html {
@@ -44,6 +52,9 @@ header {
     line-height: 50px;
 }
 
+.form-control {
+    font-size: 20px;
+}
 .page-header {
     height: 20px;
     line-height: 0px;
