@@ -16,9 +16,13 @@
 * {
     font-size: 17
 }
-td {
-    font-size: 17
+
+button {
+    background-color: lightcoral;
+    border: none;
+    
 }
+
 html {
     padding: 0;
     display: inline;
