@@ -25,7 +25,6 @@ A two-sided marketplace to buy and sell secondhand vinyl records.
 
 - [Planning and dev](#planning-and-dev)
   - [Project Plan](#project-plan)
-  - [Timeline](#timeline)
   - [Trello](#Trello)
 - [Short Answer Questions](#short-answer-questions)
 - [Future developments](#future-developments)
@@ -82,12 +81,14 @@ Along with these technologies gems the following gems were utilized to provide a
 
 ### project plan
 
-### Timeline 
 
 ### Planning and dev
 
 #### Trello
 
+Trello was used for project management and to facilitate the an aspect of the collaboration between team members. Cards were allocated in standard fashion with due dates, labelling and use of lists to denote importance to MVP and final deliverables. 
+
+![trello](docs/trello.png)
 
 
 ## Short Answer Questions
@@ -189,7 +190,7 @@ As a two sided marketplace serving sellers and buyers as a platform in this mann
 One notable similarity here is that users can both buy and sell thus the joining table between users and ads. 
 
 
-![logo](docs/data_model.gif)
+![datamodel](docs/data_model.gif)
 *gumtree data model*
 
 #### 12. Discuss the database relations to be implemented.
@@ -227,7 +228,7 @@ The relations between these models follows the scheme and can be viewed for more
 
 The overview of our schema follows our ERD and although the ERD has some revisions along the way the schema also changed to reflect this. 
 
-![logo](docs/erd_2_final.png)
+![erd](docs/erd_2_final.png)
 *final erd*
 
 #### 15. Provide User stories for your App.
