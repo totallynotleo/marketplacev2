@@ -1,4 +1,4 @@
-
+<%%>
 <table>
   <thead>
     <tr>
@@ -27,12 +27,13 @@
 <div>
   Total: $<%= @amount %> |
   <%= link_to 'Keep Shopping', listings_path, class: 'button is-warning' %>
+  <%= link_to 'Empty Cart', @cart, method: :delete, data: { confirm: "Are you sure? " }, class: "button is-danger" %>
 </div>
 
 <% if @amount > 0 %>
 <p>
 <button> Pay Now </button>
-<%= link_to 'Empty Cart', @cart, method: :delete, data: { confirm: "Are you sure? " }, class: "button is-danger" %>
+
 </p>
 
 <% end %>
