@@ -62,6 +62,24 @@ Along with these technologies gems the following gems were utilized to provide a
 
 ### Setup
 
+Setup of the app follows standard procedures via cloning 
+- create local dir for cloning
+-- mkdir eventspark
+- cd into dir 
+-- cd eventspark
+- clone repo
+-- git clone git@github.com:totallynotleo/marketplacev2.git
+- once repo is cloned run bundle install 
+-- bundle instal 
+- run db:create
+-- rails db:ceate
+- migrate db
+-- rails db:migrate
+
+*Alternatively the app is deployed live on Heroku and can be used in full at the link below*
+
+https://limitless-bastion-71589.herokuapp.com/users/sign_in
+
 
 
 ## Design
