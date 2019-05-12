@@ -22,9 +22,6 @@ A two-sided marketplace to buy and sell secondhand vinyl records.
 - [Design](#design)
   -[design process](#design-process)
   - [Users Journey](#users-journey)
-
-- [Planning and dev](#planning-and-dev)
-  - [Project Plan](#project-plan)
   - [Trello](#Trello)
 - [Short Answer Questions](#short-answer-questions)
 - [Future developments](#future-developments)
@@ -81,18 +78,11 @@ Before we wrote any code we made sure our data models were going to work without
 
 The base sections of the code didn't feature all of the user stories due to lack of time and the desire to avoid feature creep. Anything not considered MVP was sidelined. Some of these features included, search by category, review systems, admin rights to filter listings, in-app messaging service, email notification for users based on selected criteria, calendar based booking system.
 
-### Users Journey
+#### Users Journey
 
 An outline of a users journey can been see in the diagram below. The basic journey would be that from landing page users can view all aspects of listings without logging in. They can elect to log in straight away, view their profile and navigate to the listings section and either create a listing or place an order, complete a payment then logout of the site. 
 
 ![userjourney](docs/user_journey.JPG)
-
-## Planning and dev
-
-### project plan
-
-
-### Planning and dev
 
 #### Trello
 
@@ -288,14 +278,23 @@ The first week and a half a running document was kept to draft out concerns and 
 
 Agile methodology was used to plan project sprints to complete the crucial sections of MVP code, design process, brainstorming, wireframing, documentation, testing, layout and design of the live site, deployment. A running diary was kept of work sessions for all members to view in the case of absence. This also allowed work to be carried out independently or in pairs as required. As in all things some parts of the project sprints extended past the envisaged timeline but this was handled but task shifting and load sharing. 
 
+Another aspect decided on early was that each member has different time constraints and we would need to work independently outside of allocated class hours. This meant frequent communication via slack, monitoring and notifying members of changes via slack and trello as well as check ins during time spent while working together to ensure all any issues were raised and could be rectified. Despite this most work was completed when members were in class during loosely planned sprints. 
+
 Our timeline loosely followed
 - day 1 brainstorm idea, plan out the erd, troubleshoot issues with before writing any code
 - day 2 complete erd diagrams, plan the mvp sections of code, research other marketplaces, revise the use of gems that are required for the project.
-- 
+- day 3 was a futher planning sessions that included erd modification, ethical concerns discussed, further user stories adedd and the users journey
+- day 4 was a beginning of the initial codebase while other members began to create supporting documents needed and finalise research to ensure all bases were covered regarding features
+- day 5 was creation of basic rails app and discussion/coding of models for db relations as well as wireframing
+- day 6 was a further session that was MVP coding, documenting and a brief session to discuss any issues that were present
+- day 7 testing of gems, adding of search feature, further documentation and work on the deliverables aspect
+- the remaining days were broken up due to the members having some committments that cut into face to face time as a team however the aspects worked on were adding to cart section, stripe, and the layout aspect of the views along
+
+all of the coding was done using frequent commits and testing of code as these stages to ensure no bugs were being introduced to production code. 
 
 #### 19. Provide an overview and description of your Source control process.
 
-We adapted a feature branch workflow for source control with a single repo maintainer. 
+We adapted a feature branch workflow for source control with a single repo maintainer. This allowed for independent coding of features without touching the 
 
 
 #### 20. Provide an overview and description of your Testing process.
