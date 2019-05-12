@@ -1,7 +1,9 @@
 #Event Spark 
 
-### link to Heroku goes here
-### link to github repo goes here
+#### Link to Heroku 
+https://limitless-bastion-71589.herokuapp.com/users/sign_in
+#### Link to github repo 
+https://github.com/totallynotleo/marketplacev2
 
 A two-sided marketplace to buy and sell secondhand vinyl records.
 
