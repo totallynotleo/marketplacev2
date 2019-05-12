@@ -288,16 +288,18 @@ Our timeline loosely followed
 - day 5 was creation of basic rails app and discussion/coding of models for db relations as well as wireframing
 - day 6 was a further session that was MVP coding, documenting and a brief session to discuss any issues that were present
 - day 7 testing of gems, adding of search feature, further documentation and work on the deliverables aspect
-- the remaining days were broken up due to the members having some committments that cut into face to face time as a team however the aspects worked on were adding to cart section, stripe, and the layout aspect of the views along
+- the remaining days were broken up due to the members having some commitments that cut into face to face time as a team however the aspects worked on were adding to cart section, stripe, and the layout aspect of the views along
 
 all of the coding was done using frequent commits and testing of code as these stages to ensure no bugs were being introduced to production code. 
 
 #### 19. Provide an overview and description of your Source control process.
 
-We adapted a feature branch workflow for source control with a single repo maintainer. This allowed for independent coding of features without touching the 
+We adapted a feature branch workflow for source control with a single repo maintainer. This allowed for independent coding of features without touching the production code. Features were worked on in sprints on separate branches before being tested, final origin pulls to ensure up to date code and merge conflicts were avoided and raised as a pull request to the repo maintainer.
 
 
 #### 20. Provide an overview and description of your Testing process.
+
+Testing was done in a number of ways, one was bug chasing via the user journeys to ensure all features worked as expected and that unexpected cases were taken into consideration. 
 
 #### 21. Discuss and analyse requirements related to information system security.
 
