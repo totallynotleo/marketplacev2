@@ -18,8 +18,8 @@
       <td> <%= image_tag cart_item.listing.image, :size => "100x100" %> </td> 
     <% end %>
       <td> <%= cart_item.listing.title %> </td>
-      <td> $<%= cart_item.quantity %> </td>
-      <td> <%= cart_item.listing.cost %></td>
+      <td> <%= cart_item.listing.user.username %> </td>
+      <td> $<%= cart_item.listing.cost %></td>
       <td> <%= button_to "Remove from Cart", cart_item, :method => :delete %></td>
   <% end %>
   </tbody>
