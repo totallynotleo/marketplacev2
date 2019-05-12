@@ -25,7 +25,7 @@
     <% @listings.each do |listing| %>
       <tr>
       <% if listing.image.attached? == true %>
-        <td><%= cl_image_tag listing.image, :size => "100x100"  %> </td>
+        <td><%= image_tag listing.image, :size => "100x100"  %> </td>
         <% else %>
         <td></td>
       <% end %>
