@@ -323,11 +323,15 @@ Another aspect of security is the storing of data in the database. At this stage
 
 To protect user data we have ensured that we do not take sensitive data from the user in the first place. We are not asking for names and addresses at account creation or at some other point in the process of the users. Users can elect to have an item shipped however this is discretionary to the user and as the app is providing a service users buying and selling a product. Beyond this however is the protection of users themselves when using the app. Users are prevented from viewing other users data on the platform. We have also ensured users can edit their own data at any point with the request to delete an account to be included in future versions. 
 
-As this app is based scoped to an Australian market at this point we have not deeply considered the breach and storage policy of the GDPR. Further to this as we are using third parties we need to be on guard against breaches or exploits in these cases. 
+As this app is based scoped to an Australian market at this point we have not deeply considered the breach and storage policy of the GDPR. Further to this as we are using third parties we need to be on guard against breaches or exploits in these cases. Stripe has their own comprehensive security guidelines to ensure safety of their users. Heroku also implements data protection and the use of SLL protocol provides a level of protection during communication with the server. 
 
 Another aspect of this will be to provide a privacy policy for our users ensuring that we are not releasing an part of their details to a third party for purposes other than making a payment. 
 
 #### 23. Research what your legal obligations are in relation to handling user data.
+
+As the app is collecting user data we are obliged to ensure that we comply with the Privacy Act under Australian law. However at this stage the data we received is not utilized for tracking. This is an important consideration and further to this we have ensured we are not collecting sensitive data such as names, addresses and phone numbers that may be used to track or identify users of our site. Even so a privacy policy will be drafted and provided to users upon sign up to ensure they are aware of what details will be entered and what they are used for. In our case it basically means that we only use the data we have for the time we need it, we are not collecting sensitive or personal data, we are not selling data to any third parties. 
+
+In short we are required to comply with the Privacy Act through a systematic approach to collecting data and considering the impact of a breach of said data, whether this data is sensitive and can be used to identify a user of the platform and if this is the case then the data needs to be encrypted and stored in a secure manner.  
 
 
 
