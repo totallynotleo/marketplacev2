@@ -29,7 +29,7 @@ class CartsController < ApplicationController
       payment_method_types: ['card'],
       line_items: [{
         name: 'Cart',
-        description: "TO DO ",
+        description: "Thank you for using EventSpark ",
         amount: @amount * 100,
         currency: 'aud',
         quantity: 1,

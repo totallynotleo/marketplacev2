@@ -20,19 +20,19 @@
       <td> <%= cart_item.listing.title %> </td>
       <td> $<%= cart_item.quantity %> </td>
       <td> <%= cart_item.listing.cost %></td>
-      <td> <%= link_to "Remove from Cart", LineItem.where(cart_id: session[:cart_id]), :method => :delete %> <td>
+      <td> <%= button_to "Remove from Cart", cart_item, :method => :delete %></td>
   <% end %>
   </tbody>
 </table>
 <div>
-  Total: <%= @amount %> |
+  Total: $<%= @amount %> |
   <%= link_to 'Keep Shopping', listings_path, class: 'button is-warning' %>
 </div>
 
 <% if @amount > 0 %>
 <p>
 <button> Pay Now </button>
-<%= button_to 'Empty Cart', @cart, method: :delete, data: { confirm: "Are you sure? " }, class: "button is-danger" %>
+<%= link_to 'Empty Cart', @cart, method: :delete, data: { confirm: "Are you sure? " }, class: "button is-danger" %>
 </p>
 
 <% end %>
