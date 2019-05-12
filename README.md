@@ -1,7 +1,9 @@
 #Event Spark 
 
-### link to Heroku goes here
-### link to github repo goes here
+#### Link to Heroku 
+https://limitless-bastion-71589.herokuapp.com/users/sign_in
+#### Link to github repo 
+https://github.com/totallynotleo/marketplacev2
 
 A two-sided marketplace to buy and sell secondhand vinyl records.
 
@@ -20,10 +22,6 @@ A two-sided marketplace to buy and sell secondhand vinyl records.
 - [Design](#design)
   -[design process](#design-process)
   - [Users Journey](#users-journey)
-
-- [Planning and dev](#planning-and-dev)
-  - [Project Plan](#project-plan)
-  - [Timeline](#timeline)
   - [Trello](#Trello)
 - [Short Answer Questions](#short-answer-questions)
 - [Future developments](#future-developments)
@@ -64,28 +62,51 @@ Along with these technologies gems the following gems were utilized to provide a
 
 ### Setup
 
+Setup of the app follows standard procedures via cloning 
+- create local dir for cloning
+-- mkdir eventspark
+- cd into dir 
+-- cd eventspark
+- clone repo
+-- git clone git@github.com:totallynotleo/marketplacev2.git
+- once repo is cloned run bundle install 
+-- bundle instal 
+- run db:create
+-- rails db:ceate
+- migrate db
+-- rails db:migrate
+
+*Alternatively the app is deployed live on Heroku and can be used in full at the link below*
+
+https://limitless-bastion-71589.herokuapp.com/users/sign_in
+
 
 
 ## Design
 
 ### Design Process 
 
-### User Stories 
+The design process was relatively simple as we knew the MVP section of the code would take full precedence over an icing style elements in the front end. The design was to brainstormed and documented via google docs and pen & paper on the first day to guide us a guide to work from in the coming days. It was decided that a simple marketplace to to provide a space for renting A/V equipment provided ample inspiration to work from. 
+
+From here we then elaborated on how we might provide such a service by looking into the designs, layouts and features of existing marketplaces that similarly represented our proposed idea. At this point we needed to model data, begin to wireframe and then structure user stories.The team then broke off into solo work to then follow each of these leads into how we would successfully implement the final product. 
+
+Before we wrote any code we made sure our data models were going to work without complication. 
 
 #### Future development 
 
-### Users Journey
+The base sections of the code didn't feature all of the user stories due to lack of time and the desire to avoid feature creep. Anything not considered MVP was sidelined. Some of these features included, search by category, review systems, admin rights to filter listings, in-app messaging service, email notification for users based on selected criteria, calendar based booking system.
 
-## Planning and dev
+#### Users Journey
 
-### project plan
+An outline of a users journey can been see in the diagram below. The basic journey would be that from landing page users can view all aspects of listings without logging in. They can elect to log in straight away, view their profile and navigate to the listings section and either create a listing or place an order, complete a payment then logout of the site. 
 
-### Timeline 
-
-### Planning and dev
+![userjourney](docs/user_journey.JPG)
 
 #### Trello
 
+Trello was used for project management and to facilitate the an aspect of the collaboration between team members. Cards were allocated in standard fashion with due dates, labelling and use of lists to denote importance to MVP and final deliverables. 
+
+![trello](docs/trello.png)
 
 
 ## Short Answer Questions
@@ -113,7 +134,7 @@ Heroku uses VM's named Dynos to run the application as a container holding all o
 
 #### 5. Identify and describe the software to be used in your App.
 
-software utiliyed in Event Spark 
+software utilized in Event Spark 
 - Ruby on Rails as the server side language to create underlying code the MVC architecture will run on
 - PostgresQL provides the database for the app, Postgres allows the app to be deployed directly to Heroku 
 - Front End is created using HTML5 and CSS3, allowing for a responsive and captivating design to each of the user views
@@ -170,15 +191,14 @@ The high level components of our app follow the MVC design and are
 
 #### 10. Detail any third party services that your App will use.
 
--Heroku 
-The app will be deployed to Heroku and hosted here for future use. As Heroku is a fully managed container based hosting platform it allows us to focus on production of the product without the headaches associated with managing hardware, servers and associated infrastructure.
--Cloundinary
-image uploads will be handled Cloundinary, the benefit of this for future iterations of this app and current versions is Cloundinary being a CDN as well as a cloud based image hosting service. This allow for faster content delivery across networks through localized server storage of images. This is an essential feature now as we approach we know we have limited time to garner user attention before they close a tab or decide things are happening to slowly.
--Stripe 
-Stripe will handle the payment aspect of the site. A key aspect of this is the payment security is then offloaded to Stripe and details are never touched by Event Spark to ensure a further layer of security. 
--Github 
-Github is used for version control. Obviously an essential element in software development is the use of version control to ensure, as much as possible, wrinkles in the code are ironed out before deployment and not pushed to production code. 
--
+*Heroku* 
+- The app will be deployed to Heroku and hosted here for future use. As Heroku is a fully managed container based hosting platform it allows us to focus on production of the product without the headaches associated with managing hardware, servers and associated infrastructure.
+*Cloundinary*
+- image uploads will be handled Cloundinary, the benefit of this for future iterations of this app and current versions is Cloundinary being a CDN as well as a cloud based image hosting service. This allow for faster content delivery across networks through localized server storage of images. This is an essential feature now as we approach we know we have limited time to garner user attention before they close a tab or decide things are happening to slowly.
+*Stripe* 
+ -Stripe will handle the payment aspect of the site. A key aspect of this is the payment security is then offloaded to Stripe and details are never touched by Event Spark to ensure a further layer of security. 
+*Github* 
+- Github is used for version control. Obviously an essential element in software development is the use of version control to ensure, as much as possible, wrinkles in the code are ironed out before deployment and not pushed to production code. 
 
 #### 11. Describe (in general terms) the data structure of marketplace apps that are similar to your own (e.g. eBay, Airbnb).
 
@@ -187,7 +207,7 @@ As a two sided marketplace serving sellers and buyers as a platform in this mann
 One notable similarity here is that users can both buy and sell thus the joining table between users and ads. 
 
 
-![logo](docs/data_model.gif)
+![datamodel](docs/data_model.gif)
 *gumtree data model*
 
 #### 12. Discuss the database relations to be implemented.
@@ -225,7 +245,7 @@ The relations between these models follows the scheme and can be viewed for more
 
 The overview of our schema follows our ERD and although the ERD has some revisions along the way the schema also changed to reflect this. 
 
-![logo](docs/erd_2_final.png)
+![erd](docs/erd_2_final.png)
 *final erd*
 
 #### 15. Provide User stories for your App.
@@ -276,23 +296,60 @@ The first week and a half a running document was kept to draft out concerns and 
 
 Agile methodology was used to plan project sprints to complete the crucial sections of MVP code, design process, brainstorming, wireframing, documentation, testing, layout and design of the live site, deployment. A running diary was kept of work sessions for all members to view in the case of absence. This also allowed work to be carried out independently or in pairs as required. As in all things some parts of the project sprints extended past the envisaged timeline but this was handled but task shifting and load sharing. 
 
+Another aspect decided on early was that each member has different time constraints and we would need to work independently outside of allocated class hours. This meant frequent communication via slack, monitoring and notifying members of changes via slack and trello as well as check ins during time spent while working together to ensure all any issues were raised and could be rectified. Despite this most work was completed when members were in class during loosely planned sprints. 
+
 Our timeline loosely followed
 - day 1 brainstorm idea, plan out the erd, troubleshoot issues with before writing any code
 - day 2 complete erd diagrams, plan the mvp sections of code, research other marketplaces, revise the use of gems that are required for the project.
-- 
+- day 3 was a futher planning sessions that included erd modification, ethical concerns discussed, further user stories adedd and the users journey
+- day 4 was a beginning of the initial codebase while other members began to create supporting documents needed and finalise research to ensure all bases were covered regarding features
+- day 5 was creation of basic rails app and discussion/coding of models for db relations as well as wireframing
+- day 6 was a further session that was MVP coding, documenting and a brief session to discuss any issues that were present
+- day 7 testing of gems, adding of search feature, further documentation and work on the deliverables aspect
+- the remaining days were broken up due to the members having some commitments that cut into face to face time as a team however the aspects worked on were adding to cart section, stripe, and the layout aspect of the views along
+
+all of the coding was done using frequent commits and testing of code as these stages to ensure no bugs were being introduced to production code. 
 
 #### 19. Provide an overview and description of your Source control process.
 
-We adapted a feature branch workflow for source control with a single repo maintainer. 
+We adapted a feature branch workflow for source control with a single repo maintainer. This allowed for independent coding of features without touching the production code. Features were worked on in sprints on separate branches before being tested, final origin pulls to ensure up to date code and merge conflicts were avoided and raised as a pull request to the repo maintainer.
 
 
 #### 20. Provide an overview and description of your Testing process.
 
+Testing was done in a number of ways, one was bug chasing via the user journeys to ensure all features worked as expected and that unexpected cases were taken into consideration. Further unit testing was undertaken using RSpec to ensure the routs, models, views and controllers were exhibiting expected behaviors. The team was relatively inexperienced using unit testing and so more exhaustive testing will be conducted in the future. 
+
+A portion of the tests conducted were
+- users can login in and view account 
+- users can make an order
+- users can make payment for an order
+- users can delete an item from the cart
+- users can logout 
+- users can create a listing 
+- users can modify a listing or upload a photo
+- users cannot add their own listing to an order
+
 #### 21. Discuss and analyse requirements related to information system security.
+
+The Rail framework itself is a relatively secure platform to work in as the built in helper methods can help defeat injection attacks. Forms are another common avenue for malicious intent and to the teams knowledge at this stage Rails is using encrypted cookies to protect sessions. Data is also validated using authenticity tokens by Rails prior to being written into the database for further security.
+
+Use of third party services allowed a layer of abstraction for further security beyond the Rails framework. Devise is internally using the Bcrypt gem to encrypt passwords so passwords aren't being stored as plain text (cough-facebook-cough). Stripe gives a layer of security to the payment site of things by allowing the platform to offload payment details, thus credit card info is never stored or handled by the app itself. 
+
+Another aspect of security is the storing of data in the database. At this stage we do not take sensitive data from the users beyond an email and phone number and postcode. 
 
 #### 22. Discuss methods you will use to protect information and data.
 
+To protect user data we have ensured that we do not take sensitive data from the user in the first place. We are not asking for names and addresses at account creation or at some other point in the process of the users. Users can elect to have an item shipped however this is discretionary to the user and as the app is providing a service users buying and selling a product. Beyond this however is the protection of users themselves when using the app. Users are prevented from viewing other users data on the platform. We have also ensured users can edit their own data at any point with the request to delete an account to be included in future versions. 
+
+As this app is based scoped to an Australian market at this point we have not deeply considered the breach and storage policy of the GDPR. Further to this as we are using third parties we need to be on guard against breaches or exploits in these cases. Stripe has their own comprehensive security guidelines to ensure safety of their users. Heroku also implements data protection and the use of SLL protocol provides a level of protection during communication with the server. 
+
+Another aspect of this will be to provide a privacy policy for our users ensuring that we are not releasing an part of their details to a third party for purposes other than making a payment. 
+
 #### 23. Research what your legal obligations are in relation to handling user data.
+
+As the app is collecting user data we are obliged to ensure that we comply with the Privacy Act under Australian law. However at this stage the data we received is not utilized for tracking. This is an important consideration and further to this we have ensured we are not collecting sensitive data such as names, addresses and phone numbers that may be used to track or identify users of our site. Even so a privacy policy will be drafted and provided to users upon sign up to ensure they are aware of what details will be entered and what they are used for. In our case it basically means that we only use the data we have for the time we need it, we are not collecting sensitive or personal data, we are not selling data to any third parties. 
+
+In short we are required to comply with the Privacy Act through a systematic approach to collecting data and considering the impact of a breach of said data, whether this data is sensitive and can be used to identify a user of the platform and if this is the case then the data needs to be encrypted and stored in a secure manner.  
 
 
 
