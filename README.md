@@ -282,7 +282,9 @@ These are the potential user stories we decided on, please note full functionali
 
 #### 16. Provide Wireframes for your App.
 
-# to be added
+![desktop](docs/desktop.png)
+![tablet](docs/tablet.png)
+![smartphone](docs/smartphone.png)
 
 #### 17. Describe the way tasks are allocated and tracked in your project.
 
