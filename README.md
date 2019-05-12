@@ -309,15 +309,23 @@ A portion of the tests conducted were
 - users can logout 
 - users can create a listing 
 - users can modify a listing or upload a photo
-
+- users cannot add their own listing to an order
 
 #### 21. Discuss and analyse requirements related to information system security.
 
 The Rail framework itself is a relatively secure platform to work in as the built in helper methods can help defeat injection attacks. Forms are another common avenue for malicious intent and to the teams knowledge at this stage Rails is using encrypted cookies to protect sessions. Data is also validated using authenticity tokens by Rails prior to being written into the database for further security.
 
-Use of third party services allowed a layer of abstraction for further security beyond the Rails framework. Devise is internaly using the Bcrypt gem to encrypt passwords so passwords aren't being stored as plain text (cough-facebook-cough). Stripe gives a layer of security to the payment site of things by allowing the platform to 
+Use of third party services allowed a layer of abstraction for further security beyond the Rails framework. Devise is internally using the Bcrypt gem to encrypt passwords so passwords aren't being stored as plain text (cough-facebook-cough). Stripe gives a layer of security to the payment site of things by allowing the platform to offload payment details, thus credit card info is never stored or handled by the app itself. 
+
+Another aspect of security is the storing of data in the database. At this stage we do not take sensitive data from the users beyond an email and phone number and postcode. 
 
 #### 22. Discuss methods you will use to protect information and data.
+
+To protect user data we have ensured that we do not take sensitive data from the user in the first place. We are not asking for names and addresses at account creation or at some other point in the process of the users. Users can elect to have an item shipped however this is discretionary to the user and as the app is providing a service users buying and selling a product. Beyond this however is the protection of users themselves when using the app. Users are prevented from viewing other users data on the platform. We have also ensured users can edit their own data at any point with the request to delete an account to be included in future versions. 
+
+As this app is based scoped to an Australian market at this point we have not deeply considered the breach and storage policy of the GDPR. Further to this as we are using third parties we need to be on guard against breaches or exploits in these cases. 
+
+Another aspect of this will be to provide a privacy policy for our users ensuring that we are not releasing an part of their details to a third party for purposes other than making a payment. 
 
 #### 23. Research what your legal obligations are in relation to handling user data.
 
