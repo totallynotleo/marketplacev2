@@ -71,11 +71,21 @@ Along with these technologies gems the following gems were utilized to provide a
 
 ### Design Process 
 
-### User Stories 
+The design process was relatively simple as we knew the MVP section of the code would take full precedence over an icing style elements in the front end. The design was to brainstormed and documented via google docs and pen & paper on the first day to guide us a guide to work from in the coming days. It was decided that a simple marketplace to to provide a space for renting A/V equipment provided ample inspiration to work from. 
+
+From here we then elaborated on how we might provide such a service by looking into the designs, layouts and features of existing marketplaces that similarly represented our proposed idea. At this point we needed to model data, begin to wireframe and then structure user stories.The team then broke off into solo work to then follow each of these leads into how we would successfully implement the final product. 
+
+Before we wrote any code we made sure our data models were going to work without complication. 
 
 #### Future development 
 
+The base sections of the code didn't feature all of the user stories due to lack of time and the desire to avoid feature creep. Anything not considered MVP was sidelined. Some of these features included, search by category, review systems, admin rights to filter listings, in-app messaging service, email notification for users based on selected criteria, calendar based booking system.
+
 ### Users Journey
+
+An outline of a users journey can been see in the diagram below. The basic journey would be that from landing page users can view all aspects of listings without logging in. They can elect to log in straight away, view their profile and navigate to the listings section and either create a listing or place an order, complete a payment then logout of the site. 
+
+![userjourney](docs/user_journey.JPG)
 
 ## Planning and dev
 
