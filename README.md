@@ -299,9 +299,23 @@ We adapted a feature branch workflow for source control with a single repo maint
 
 #### 20. Provide an overview and description of your Testing process.
 
-Testing was done in a number of ways, one was bug chasing via the user journeys to ensure all features worked as expected and that unexpected cases were taken into consideration. 
+Testing was done in a number of ways, one was bug chasing via the user journeys to ensure all features worked as expected and that unexpected cases were taken into consideration. Further unit testing was undertaken using RSpec to ensure the routs, models, views and controllers were exhibiting expected behaviors. The team was relatively inexperienced using unit testing and so more exhaustive testing will be conducted in the future. 
+
+A portion of the tests conducted were
+- users can login in and view account 
+- users can make an order
+- users can make payment for an order
+- users can delete an item from the cart
+- users can logout 
+- users can create a listing 
+- users can modify a listing or upload a photo
+
 
 #### 21. Discuss and analyse requirements related to information system security.
+
+The Rail framework itself is a relatively secure platform to work in as the built in helper methods can help defeat injection attacks. Forms are another common avenue for malicious intent and to the teams knowledge at this stage Rails is using encrypted cookies to protect sessions. Data is also validated using authenticity tokens by Rails prior to being written into the database for further security.
+
+Use of third party services allowed a layer of abstraction for further security beyond the Rails framework. Devise is internaly using the Bcrypt gem to encrypt passwords so passwords aren't being stored as plain text (cough-facebook-cough). Stripe gives a layer of security to the payment site of things by allowing the platform to 
 
 #### 22. Discuss methods you will use to protect information and data.
 
