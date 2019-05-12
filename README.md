@@ -116,7 +116,7 @@ Heroku uses VM's named Dynos to run the application as a container holding all o
 
 #### 5. Identify and describe the software to be used in your App.
 
-software utiliyed in Event Spark 
+software utilized in Event Spark 
 - Ruby on Rails as the server side language to create underlying code the MVC architecture will run on
 - PostgresQL provides the database for the app, Postgres allows the app to be deployed directly to Heroku 
 - Front End is created using HTML5 and CSS3, allowing for a responsive and captivating design to each of the user views
@@ -173,15 +173,14 @@ The high level components of our app follow the MVC design and are
 
 #### 10. Detail any third party services that your App will use.
 
--Heroku 
-The app will be deployed to Heroku and hosted here for future use. As Heroku is a fully managed container based hosting platform it allows us to focus on production of the product without the headaches associated with managing hardware, servers and associated infrastructure.
--Cloundinary
-image uploads will be handled Cloundinary, the benefit of this for future iterations of this app and current versions is Cloundinary being a CDN as well as a cloud based image hosting service. This allow for faster content delivery across networks through localized server storage of images. This is an essential feature now as we approach we know we have limited time to garner user attention before they close a tab or decide things are happening to slowly.
--Stripe 
-Stripe will handle the payment aspect of the site. A key aspect of this is the payment security is then offloaded to Stripe and details are never touched by Event Spark to ensure a further layer of security. 
--Github 
-Github is used for version control. Obviously an essential element in software development is the use of version control to ensure, as much as possible, wrinkles in the code are ironed out before deployment and not pushed to production code. 
--
+*Heroku* 
+- The app will be deployed to Heroku and hosted here for future use. As Heroku is a fully managed container based hosting platform it allows us to focus on production of the product without the headaches associated with managing hardware, servers and associated infrastructure.
+*Cloundinary*
+- image uploads will be handled Cloundinary, the benefit of this for future iterations of this app and current versions is Cloundinary being a CDN as well as a cloud based image hosting service. This allow for faster content delivery across networks through localized server storage of images. This is an essential feature now as we approach we know we have limited time to garner user attention before they close a tab or decide things are happening to slowly.
+*Stripe* 
+ -Stripe will handle the payment aspect of the site. A key aspect of this is the payment security is then offloaded to Stripe and details are never touched by Event Spark to ensure a further layer of security. 
+*Github* 
+- Github is used for version control. Obviously an essential element in software development is the use of version control to ensure, as much as possible, wrinkles in the code are ironed out before deployment and not pushed to production code. 
 
 #### 11. Describe (in general terms) the data structure of marketplace apps that are similar to your own (e.g. eBay, Airbnb).
 
